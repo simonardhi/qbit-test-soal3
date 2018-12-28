@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "password",
+    "database": "panda_qbit",
+    "host": "35.247.178.67",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "password",
+    "database": "panda_qbit",
+    "host": "35.247.178.67",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "password",
+    "database": "panda_qbit",
+    "host": "35.247.178.67",
+    "dialect": "postgres"
+  }
+}
