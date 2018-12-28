@@ -69,8 +69,8 @@ module.exports = {
 				}
 			}
 		})
-		.then((snackPrefs) => {
-			res.status(200).send(snackPrefs);
+		.then((panda) => {
+			res.status(200).send(panda);
 		})
 		.catch((error) => {
 			res.status(400).send(error);
