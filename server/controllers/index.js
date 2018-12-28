@@ -4,6 +4,24 @@ const Panda = require('../models/panda').Panda;
 const Snack = require('../models/snack').Snack;
 const SnackPref = require('../models/snackpref').SnackPref;
 
+var modelData = {
+	id: "pandaID",
+	panda: "pandaName",
+	snacks: [
+		{
+			id: "snackID",
+			name: "snackName",
+			taste: ["manis", "tawar", "asin", "pedas"],
+			cook_types: [
+				{cook_type: "rebus"},
+				{cook_type: "goreng"},
+				{cook_type: "tim"},
+				{cook_type: "raw"}
+			]
+		}
+	]
+};
+
 module.exports = {
 	list(req, res) {
 		return SnackPref.findAll({
@@ -41,6 +59,15 @@ module.exports = {
 		})
 	},
 	add(req, res) {
-		return null;
+		return Panda.create(modelData, {
+			include: {
+				model: Snack,
+				as: "snacks",
+				include: {
+					model: SnackPref,
+					as: "cook_types"
+				}
+			}
+		});
 	}
 };
