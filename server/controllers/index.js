@@ -68,6 +68,12 @@ module.exports = {
 					as: "cook_types"
 				}
 			}
+		})
+		.then((snackPrefs) => {
+			res.status(200).send(snackPrefs);
+		})
+		.catch((error) => {
+			res.status(400).send(error);
 		});
 	}
 };
